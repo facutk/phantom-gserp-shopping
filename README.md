@@ -1,6 +1,8 @@
 # phantom-gserp-shopping
 
+```sh
 phantomjs phantom-gserp-shopping.js vodka
+```
 
 ```json
 [
