@@ -57,13 +57,13 @@ if (system.args.length < 2) {
           });
 
           console.log( products );
-          page.render('page.png');
+          //page.render('page.png');
           phantom.exit();
 
         }, delay);
 
       } else {
-        page.render('page.png');
+        //page.render('page.png');
         phantom.exit();
       };
     }, delay);
