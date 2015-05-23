@@ -7,7 +7,8 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "~4.9.x"
+    "express": "~4.9.x",
+    "phantom": "^0.7.2"
   },
   "engines": {
     "node": ">=0.10.0"
