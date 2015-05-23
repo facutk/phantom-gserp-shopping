@@ -1,7 +1,28 @@
 {
   "name": "quantic-keywords",
   "version": "0.0.0",
+  "description": "phantomjs google shopping keyword grabber",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "~4.9.x"
+  },
   "engines": {
     "node": ">=0.10.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facutk/phantom-gserp-shopping"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "phantomjs",
+    "google",
+    "shopping",
+    "serp"
+  ],
+  "license": "MIT"
 }
