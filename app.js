@@ -23,18 +23,28 @@ app.get('/read', function(request, response) {
 
 app.get('/q/:id', function(request, response) {
 
-  phantom.create(function (ph) {
-    ph.createPage(function (page) {
-      console.log( request.params.id );
-      page.open( 'http://' + request.params.id, function (status) {
-        console.log("opened page?", status);
-        page.evaluate(function () { return document.title; }, function (result) {
-          console.log('Page title is ' + result);
-          ph.exit();
+  phantom.create(
+    /*
+    // Proxy option works, but gets rejected by Google.
+    {
+      parameters: {
+        proxy: '200.217.64.220:8080'
+      }
+    },
+    */
+    function (browser) {
+      browser.createPage(function (page) {
+        console.log( request.params.id );
+        page.open( 'http://' + request.params.id, function (status) {
+          console.log("opened page?", status);
+          page.evaluate(function () { return document.title; }, function (result) {
+            console.log('Page title is ' + result);
+            browser.exit();
+          });
         });
       });
-    });
-  });
+    }
+  );
   response.send( request.params.id );
 });
 
